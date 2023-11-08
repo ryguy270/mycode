@@ -1,0 +1,25 @@
+#!/usr/bin/env
+
+def main(): 
+    print("Welcome to the Hogwarts House Sorting Quiz!")
+    print("Answer the following questions to find out which house you belong in")
+    print("Please answer with 'A', 'B', 'C', or 'D' for each question.")
+
+    questions = [
+        "Q1. What is your preferred way of spending a free afternoon?",
+        "A. Reading a book",
+        "B. Exploring a mysterious forest",
+        "C. Hanging out with friends",
+        "D. Experimenting with horcruxes",
+        "",
+        "Q2. What animal do you find most fascinating?",
+        "A. Owl",
+        "B. Unicorn",
+        "C. Lion",
+        "D. Snake",
+        "",
+        "Q3. What quality do you value most?",
+        "A. Intelligence",
+        "B. Courage",
+        "C. Loyalty",
+        "D. Ambition",

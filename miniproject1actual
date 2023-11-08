@@ -1,0 +1,42 @@
+#!usr/bin/env python3
+#Written by both RyGilly and ChatGPT
+
+#Import random 
+import random
+
+#make a function that can attempt to guess what number you're 
+#thinking of using the H L and C variables 
+
+def guess_number(min_num, max_num):
+    #set the attempts to 0
+    attempts = 0
+    #while loop
+    while True:
+        guess = (min_num + max_num) // 2
+        #defines attempt 1 and adds a 1 to the attempts with 
+        #each guess
+        attempts += 1
+        #print the guess
+        print(f"Is the number {guess}?")
+        #prompt the user to tell the program if the number is 
+        #higher, lower, or correct.
+        user_input = input("Enter 'L' if your number is lower, 'H' if it's higher, or 'C' if it's correct: ").upper()
+
+        if user_input == 'C':
+            print(f"Yay! The program guessed your number ({guess}) in {attempts} attempts.")
+            #break the infinite loop because the number was guessed
+            break
+        elif user_input == 'L':
+            max_num = guess - 1
+        elif user_input == 'H':
+            min_num = guess + 1   
+        else:
+            print("Invalid input. Please enter 'L', 'H', or 'C'.")
+#int the menu
+if __name__ == "__main__":
+    print("Welcome to the Number Guessing Game!")
+    print("Think of a number between 1 and 100, and I will try to guess it.")
+
+    min_number = 1
+    max_number = 100
+    guess_number(min_number, max_number)
