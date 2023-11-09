@@ -31,7 +31,7 @@ def guess_number(min_num, max_num):
         elif user_input == 'H':
             min_num = guess + 1   
         else:
-            print("Invalid input. Please enter 'L', 'H', or 'C'.")
+            print("Invalid input Mr. Mischevious. Enter 'L', 'H', or 'C'. Its not that hard.")
 #int the menu
 if __name__ == "__main__":
     print("Welcome to the Number Guessing Game!")

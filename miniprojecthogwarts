@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env python3
 
 def main(): 
     print("Welcome to the Hogwarts House Sorting Quiz!")
@@ -6,20 +6,48 @@ def main():
     print("Please answer with 'A', 'B', 'C', or 'D' for each question.")
 
     questions = [
-        "Q1. What is your preferred way of spending a free afternoon?",
-        "A. Reading a book",
-        "B. Exploring a mysterious forest",
-        "C. Hanging out with friends",
-        "D. Experimenting with horcruxes",
-        "",
-        "Q2. What animal do you find most fascinating?",
-        "A. Owl",
-        "B. Unicorn",
-        "C. Lion",
-        "D. Snake",
-        "",
-        "Q3. What quality do you value most?",
-        "A. Intelligence",
-        "B. Courage",
-        "C. Loyalty",
-        "D. Ambition",
+            "Q1. What is your preferred way of spending a free afternoon?",
+            "A. Reading a book",
+            "B. Exploring a mysterious forest",
+            "C. Hanging out with friends",
+            "D. Experimenting with horcruxes",
+            "",
+            "Q2. What animal do you find most fascinating?",
+            "A. Owl",
+            "B. Unicorn",
+            "C. Lion",
+            "D. Snake",
+            "",
+            "Q3. What quality do you value most?",
+            "A. Intelligence",
+            "B. Courage",
+            "C. Loyalty",
+            "D. Ambition",
+]
+
+answers = {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+}
+
+for i in range(0, len(questions), 5):
+    print(questions[i])
+    for j in range(i + 1, i + 5):
+        print(questions[j])
+    user_answer = input("Your answer: ").strip().upper()
+    if user_answer in answers:
+        answers[user_answer] += 1
+    else:
+        print("invalid anseer. Please choose 'A', 'B', or 'C' or 'D'")
+    
+    house = max(answers, key=answers.get)
+    print(f"Congradulations! You've been sorted into House {get_house_name(house)}")
+
+def get_house_name(letter):
+    houses = {"A" : "Gryffindor", "B" : "Hufflepuff", "C" : "Ravenclaw", "D" : "Slytherin"}
+    return houses.get(letter)
+
+if __name__ == "__main__":
+    main()
